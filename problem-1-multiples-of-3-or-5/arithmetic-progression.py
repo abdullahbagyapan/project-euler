@@ -1,16 +1,32 @@
-k_3 = (999 - 3) / 3 + 1
-sum_of_set_3 = (k_3 * (999 + 3)) / 2
+import math
 
-k_5 = (995 - 5) / 5 + 1
-sum_of_set_5 = (k_5 * (995 + 5)) / 2
+def step(n, m):
+    return math.floor((m - 1) / n)
 
-k_15 = (990 - 15) / 15 + 1
-sum_of_set_15 = (k_15 * (990 + 15)) / 2
+def sum_of_multiples(n, k):
+    return n * (k*(k+1))/2
 
 
-sum = sum_of_set_3 + sum_of_set_5 - sum_of_set_15
+n = 3
+m = 1000
+k = step(n, m)
+k_3 = sum_of_multiples(n, k)
 
-print(int(sum)) # Output should be 233168
+n = 5
+m = 1000
+k = step(n, m)
+k_5 = sum_of_multiples(n, k)
+
+
+n = 15
+m = 1000
+k = step(n, m)
+k_15 = sum_of_multiples(n, k)
+
+
+sum = k_3 + k_5 - k_15
+
+print(sum) # Output should be 233168
 
 
 # Relative links:
